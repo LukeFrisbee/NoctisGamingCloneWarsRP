@@ -664,228 +664,6 @@ TEAM_MEDIC = DarkRP.createJob("Medic Commander", {
     })
 
 
-TEAM_Staff = DarkRP.createJob("Trial-Moderator", {
-
-    color = Color(175, 0, 0, 255),
-
-    model = "models/player/c3po.mdl",
-
-    description = [[Trial-Moderator On Duty]],
-
-    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
-
-    command = "trialmoderator",
-
-    max = 5,
-
-    salary = 0,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "Staff",
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-
-    })
-
-
-TEAM_Staff = DarkRP.createJob("Moderator", {
-
-    color = Color(175, 0, 0, 255),
-
-    model = "models/player/c3po.mdl",
-
-    description = [[Moderator On Duty]],
-
-    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
-
-    command = "moderator",
-
-    max = 5,
-
-    salary = 0,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "Staff",
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "owner", "admin", "moderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-
-    })
-
-
-TEAM_Staff = DarkRP.createJob("Administrator", {
-
-    color = Color(175, 0, 0, 255),
-
-    model = "models/player/c3po.mdl",
-
-    description = [[Admin On Duty]],
-
-    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
-
-    command = "admin",
-
-    max = 5,
-
-    salary = 0,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "Staff",
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "owner", "admin", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-
-    })
-
-
-TEAM_Staff = DarkRP.createJob("Supervisor", {
-
-    color = Color(175, 0, 0, 255),
-
-    model = "models/player/c3po.mdl",
-
-    description = [[Supervisor On Duty]],
-
-    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
-
-    command = "supervisor",
-
-    max = 7,
-
-    salary = 0,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "Staff",
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "owner", "supervisor", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-
-    })
-
-
-TEAM_Staff = DarkRP.createJob("CO-Owner", {
-
-    color = Color(175, 0, 0, 255),
-
-    model = "models/player/c3po.mdl",
-
-    description = [[Co-Owner On Duty]],
-
-    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
-
-    command = "coowner",
-
-    max = 2,
-
-    salary = 0,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "Staff",
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "owner", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-
-    })
-
-
-TEAM_Staff = DarkRP.createJob("Founder", {
-
-    color = Color(175, 0, 0, 255),
-
-    model = "models/player/c3po.mdl",
-
-    description = [[Founder On Duty]],
-
-    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
-
-    command = "founder",
-
-    max = 1,
-
-    salary = 0,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "Staff",
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "owner", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-
-    })
-
-
 TEAM_41ST = DarkRP.createJob("41st Trooper", {
 
     color = Color(32, 196, 88, 255),
@@ -1070,6 +848,122 @@ TEAM_41ST = DarkRP.createJob("41st Commander Gree", {
     })
 
 
+TEAM_442ND = DarkRP.createJob("442nd Trooper", {
+
+    color = Color(131, 186, 14),
+
+    model = "models/player/game_rebel/442_trooper/442_trooper.mdl",
+
+    description = [[44nd Trooper]],
+
+    weapons = {"weapon_752_dc15a", "keys", "pockets"},
+
+    command = "44ndtrooper",
+
+    max = 10,
+
+    salary = 10,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "442nd Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("500") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "442ndtrooper", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_442ND = DarkRP.createJob("442nd Officer", {
+
+    color = Color(131, 186, 14),
+
+    model = "models/player/game_rebel/442_captain/442_captain.mdl",
+
+    description = [[44nd Officer]],
+
+    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s"},
+
+    command = "44ndofficer",
+
+    max = 3,
+
+    salary = 15,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "442nd Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1000") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "442ndofficer", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_442ND = DarkRP.createJob("442nd Commander Sid", {
+
+    color = Color(131, 186, 14),
+
+    model = "models/player/game_rebel/442_officer/442_officer.mdl",
+
+    description = [[44nd Commander]],
+
+    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s"},
+
+    command = "44ndcommander",
+
+    max = 1,
+
+    salary = 20,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "442nd Troopers",
+
+    sortOrder = 1,
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1500") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "442ndcommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
 TEAM_ARF = DarkRP.createJob("ARF Trooper", {
 
     color = Color(64, 64, 64),
@@ -1179,360 +1073,6 @@ TEAM_ARF = DarkRP.createJob("ARF Commander", {
     customCheck = function(ply) return CLIENT or
 
         table.HasValue({"superadmin", "arfcommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-TEAM_ARC = DarkRP.createJob("ARC Trooper", {
-
-    color = Color(0, 204, 204),
-
-    model = "models/player/tcg/starwars/arc/arctrooper.mdl",
-
-    description = [[ARC Trooper]],
-
-    weapons = {"tfa_752_defenderoftruth", "tfa_swch_dc15a", "clone_card_c2", " climb_swep2", "keys", "pockets"},
-
-    command = "arctrooper",
-
-    max = 10,
-
-    salary = 20,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    sortOrder = 6,
-
-    category = "ARC Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("500") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "arctrooper", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-TEAM_ARC = DarkRP.createJob("ARC Specialist", {
-
-    color = Color(0, 204, 204),
-
-    model = "models/player/nn/starwars/arc/gm/honos.mdl",
-
-    description = [[ARC Specialist]],
-
-    weapons = {"tfa_752_defenderoftruth", "tfa_swch_clonelauncher", "tfa_sw_repsnip", "weapon_medkit", "tfa_swch_dc15s", "tfa_swch_dc15sa", "clone_card_c2", "keys", "pockets"},
-
-    command = "arcspecialist",
-
-    max = 2,
-
-    salary = 30,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    sortOrder = 5,
-
-    category = "ARC Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("750") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "arcspecialist", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-TEAM_ARC = DarkRP.createJob("ARC Scout", {
-
-    color = Color(0, 204, 204),
-
-    model = "models/player/nn/starwars/clone/cloneofficer.mdl",
-
-    description = [[ARC Scout]],
-
-    weapons = {"tfa_swch_de10", "tfa_sw_repshot", "tfa_sw_dc17dual", "tfa_swch_dc15s", "clone_card_c2", "climb_swep2", "keys", "pockets"},
-
-    command = "arcscout",
-
-    max = 1,
-
-    salary = 30,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    sortOrder = 4,
-
-    category = "ARC Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("750") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "arcscout", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-TEAM_ARC = DarkRP.createJob("NULL ARC Heavy", {
-
-    color = Color(0, 204, 204),
-
-    model = "models/player/wuky.mdl",
-
-    description = [[NULL ARC Heavy]],
-
-    weapons = {"tfa_swch_de10", "tfa_sw_repshot", "tfa_swch_dc15s", "tfa_swch_z6", "clone_card_c2", "clone_card_c3", "climb_swep2", "keys", "pockets"},
-
-    command = "nullarcheavy",
-
-    max = 2,
-
-    salary = 50,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    sortOrder = 3,
-
-    category = "ARC Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1000") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "nullarcheavy", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-    TEAM_ARC = DarkRP.createJob("NULL ARC Officer", {
-
-    color = Color(0, 204, 204),
-
-    model = "models/player/nn/starwars/arc/null/new/nullarctrooper.mdl",
-
-    description = [[NULL ARC Officer]],
-
-    weapons = {"tfa_swch_alphablaster", "tfa_sw_dc17dual", "tfa_sw_repshot", "clone_card_c3", "climb_swep2", "keys", "pockets"},
-
-    command = "nullarcofficer",
-
-    max = 2,
-
-    salary = 75,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    sortOrder = 2,
-
-    category = "ARC Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1250") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "nullarcofficer", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-TEAM_ARC = DarkRP.createJob("NULL ARC Commander", {
-
-    color = Color(0, 204, 204),
-
-    model = "models/player/nn/starwars/arc/null/new/officer/nullarcofficer.mdl",
-
-    description = [[NULL ARC Commander]],
-
-    weapons = {"weapon_bactainjector", "tfa_swch_alphablaster", "tfa_sw_westardual", "tfa_sw_repshot", "tfa_swch_dc17m_sn", "tfa_swch_dc15a", "weapon_fists", "clone_card_c4", "climb_swep2", "keys", "pockets"},
-
-    command = "nullarccommander",
-
-    max = 1,
-
-    salary = 100,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "ARC Troopers",
-
-    sortOrder = 1,
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1500") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "nullarccommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-
-TEAM_GM = DarkRP.createJob("Galactic Marine Trooper", {
-
-    color = Color(109, 87, 87, 255),
-
-    model = "models/sgg/starwars/clonetrooper_marine.mdl",
-
-    description = [[GM Trooper]],
-
-    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_t21" },
-
-    command = "gmtrooper",
-
-    max = 10,
-
-    salary = 10,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "GM Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("500") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "gmtrooper", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-TEAM_GM = DarkRP.createJob("Galactic Marine Officer", {
-
-    color = Color(109, 87, 87, 255),
-
-    model = "models/player/gm/starwars/kel.mdl",
-
-    description = [[GM Trooper]],
-
-    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s", "weapon_752_t21"},
-
-    command = "gmofficer",
-
-    max = 3,
-
-    salary = 15,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "GM Troopers",
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1000") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "gmofficer", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
-
-        end,
-
-        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
-    })
-
-TEAM_GM = DarkRP.createJob("Galactic Marine Commander Bacara", {
-
-    color = Color(109, 87, 87, 255),
-
-    model = "models/player/sgg/starwars/clonetrooper_bacara.mdl",
-
-    description = [[GM Commander]],
-
-    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s", "weapon_752_t21" },
-
-    command = "gmcommander",
-
-    max = 1,
-
-    salary = 20,
-
-    admin = 0,
-
-    vote = false,
-
-    hasLicense = false,
-
-    hasRadio = true,
-
-    category = "GM Troopers",
-
-    sortOrder = 1,
-
-    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1500") ply:SetGravity(1) return CLIENT end,
-
-    customCheck = function(ply) return CLIENT or
-
-        table.HasValue({"superadmin", "gmcommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
 
         end,
 
@@ -2073,17 +1613,18 @@ TEAM_WOLFPACK = DarkRP.createJob("104th Commander Wolffe", {
         CustomCheckFailMsg = "You don't have the required rank to complete this action!",
     })
 
-TEAM_442ND = DarkRP.createJob("442nd Trooper", {
 
-    color = Color(131, 186, 14),
+TEAM_GM = DarkRP.createJob("Galactic Marine Trooper", {
 
-    model = "models/player/game_rebel/442_trooper/442_trooper.mdl",
+    color = Color(109, 87, 87, 255),
 
-    description = [[44nd Trooper]],
+    model = "models/sgg/starwars/clonetrooper_marine.mdl",
 
-    weapons = {"weapon_752_dc15a", "keys", "pockets"},
+    description = [[GM Trooper]],
 
-    command = "44ndtrooper",
+    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_t21" },
+
+    command = "gmtrooper",
 
     max = 10,
 
@@ -2097,13 +1638,13 @@ TEAM_442ND = DarkRP.createJob("442nd Trooper", {
 
     hasRadio = true,
 
-    category = "442nd Troopers",
+    category = "GM Troopers",
 
     PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("500") ply:SetGravity(1) return CLIENT end,
 
     customCheck = function(ply) return CLIENT or
 
-        table.HasValue({"superadmin", "442ndtrooper", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+        table.HasValue({"superadmin", "gmtrooper", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
 
         end,
 
@@ -2111,17 +1652,17 @@ TEAM_442ND = DarkRP.createJob("442nd Trooper", {
     })
 
 
-TEAM_442ND = DarkRP.createJob("442nd Officer", {
+TEAM_GM = DarkRP.createJob("Galactic Marine Officer", {
 
-    color = Color(131, 186, 14),
+    color = Color(109, 87, 87, 255),
 
-    model = "models/player/game_rebel/442_captain/442_captain.mdl",
+    model = "models/player/gm/starwars/kel.mdl",
 
-    description = [[44nd Officer]],
+    description = [[GM Trooper]],
 
-    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s"},
+    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s", "weapon_752_t21"},
 
-    command = "44ndofficer",
+    command = "gmofficer",
 
     max = 3,
 
@@ -2135,13 +1676,13 @@ TEAM_442ND = DarkRP.createJob("442nd Officer", {
 
     hasRadio = true,
 
-    category = "442nd Troopers",
+    category = "GM Troopers",
 
     PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1000") ply:SetGravity(1) return CLIENT end,
 
     customCheck = function(ply) return CLIENT or
 
-        table.HasValue({"superadmin", "442ndofficer", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+        table.HasValue({"superadmin", "gmofficer", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
 
         end,
 
@@ -2149,17 +1690,17 @@ TEAM_442ND = DarkRP.createJob("442nd Officer", {
     })
 
 
-TEAM_442ND = DarkRP.createJob("442nd Commander Sid", {
+TEAM_GM = DarkRP.createJob("Galactic Marine Commander Bacara", {
 
-    color = Color(131, 186, 14),
+    color = Color(109, 87, 87, 255),
 
-    model = "models/player/game_rebel/442_officer/442_officer.mdl",
+    model = "models/player/sgg/starwars/clonetrooper_bacara.mdl",
 
-    description = [[44nd Commander]],
+    description = [[GM Commander]],
 
-    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s"},
+    weapons = {"weapon_752_dc15a", "keys", "pockets", "weapon_752_dc15s", "weapon_752_t21" },
 
-    command = "44ndcommander",
+    command = "gmcommander",
 
     max = 1,
 
@@ -2173,7 +1714,7 @@ TEAM_442ND = DarkRP.createJob("442nd Commander Sid", {
 
     hasRadio = true,
 
-    category = "442nd Troopers",
+    category = "GM Troopers",
 
     sortOrder = 1,
 
@@ -2181,12 +1722,13 @@ TEAM_442ND = DarkRP.createJob("442nd Commander Sid", {
 
     customCheck = function(ply) return CLIENT or
 
-        table.HasValue({"superadmin", "442ndcommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+        table.HasValue({"superadmin", "gmcommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
 
         end,
 
         CustomCheckFailMsg = "You don't have the required rank to complete this action!",
     })
+
 
 TEAM_Senate = DarkRP.createJob("Senate Commandos", {
 
@@ -2296,6 +1838,246 @@ TEAM_Senate = DarkRP.createJob("Senate Commander ", {
     customCheck = function(ply) return CLIENT or
 
         table.HasValue({"superadmin", "senatecommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_ARC = DarkRP.createJob("ARC Trooper", {
+
+    color = Color(0, 204, 204),
+
+    model = "models/player/tcg/starwars/arc/arctrooper.mdl",
+
+    description = [[ARC Trooper]],
+
+    weapons = {"tfa_752_defenderoftruth", "tfa_swch_dc15a", "clone_card_c2", " climb_swep2", "keys", "pockets"},
+
+    command = "arctrooper",
+
+    max = 10,
+
+    salary = 20,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    sortOrder = 6,
+
+    category = "ARC Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("500") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "arctrooper", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_ARC = DarkRP.createJob("ARC Specialist", {
+
+    color = Color(0, 204, 204),
+
+    model = "models/player/nn/starwars/arc/gm/honos.mdl",
+
+    description = [[ARC Specialist]],
+
+    weapons = {"tfa_752_defenderoftruth", "tfa_swch_clonelauncher", "tfa_sw_repsnip", "weapon_medkit", "tfa_swch_dc15s", "tfa_swch_dc15sa", "clone_card_c2", "keys", "pockets"},
+
+    command = "arcspecialist",
+
+    max = 2,
+
+    salary = 30,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    sortOrder = 5,
+
+    category = "ARC Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("750") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "arcspecialist", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_ARC = DarkRP.createJob("ARC Scout", {
+
+    color = Color(0, 204, 204),
+
+    model = "models/player/nn/starwars/clone/cloneofficer.mdl",
+
+    description = [[ARC Scout]],
+
+    weapons = {"tfa_swch_de10", "tfa_sw_repshot", "tfa_sw_dc17dual", "tfa_swch_dc15s", "clone_card_c2", "climb_swep2", "keys", "pockets"},
+
+    command = "arcscout",
+
+    max = 1,
+
+    salary = 30,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    sortOrder = 4,
+
+    category = "ARC Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("750") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "arcscout", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_ARC = DarkRP.createJob("NULL ARC Heavy", {
+
+    color = Color(0, 204, 204),
+
+    model = "models/player/wuky.mdl",
+
+    description = [[NULL ARC Heavy]],
+
+    weapons = {"tfa_swch_de10", "tfa_sw_repshot", "tfa_swch_dc15s", "tfa_swch_z6", "clone_card_c2", "clone_card_c3", "climb_swep2", "keys", "pockets"},
+
+    command = "nullarcheavy",
+
+    max = 2,
+
+    salary = 50,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    sortOrder = 3,
+
+    category = "ARC Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1000") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "nullarcheavy", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+    TEAM_ARC = DarkRP.createJob("NULL ARC Officer", {
+
+    color = Color(0, 204, 204),
+
+    model = "models/player/nn/starwars/arc/null/new/nullarctrooper.mdl",
+
+    description = [[NULL ARC Officer]],
+
+    weapons = {"tfa_swch_alphablaster", "tfa_sw_dc17dual", "tfa_sw_repshot", "clone_card_c3", "climb_swep2", "keys", "pockets"},
+
+    command = "nullarcofficer",
+
+    max = 2,
+
+    salary = 75,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    sortOrder = 2,
+
+    category = "ARC Troopers",
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1250") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "nullarcofficer", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+    })
+
+
+TEAM_ARC = DarkRP.createJob("NULL ARC Commander", {
+
+    color = Color(0, 204, 204),
+
+    model = "models/player/nn/starwars/arc/null/new/officer/nullarcofficer.mdl",
+
+    description = [[NULL ARC Commander]],
+
+    weapons = {"weapon_bactainjector", "tfa_swch_alphablaster", "tfa_sw_westardual", "tfa_sw_repshot", "tfa_swch_dc17m_sn", "tfa_swch_dc15a", "weapon_fists", "clone_card_c4", "climb_swep2", "keys", "pockets"},
+
+    command = "nullarccommander",
+
+    max = 1,
+
+    salary = 100,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "ARC Troopers",
+
+    sortOrder = 1,
+
+    PlayerSpawn = function(ply) GAMEMODE:SetPlayerSpeed(ply, GAMEMODE.Config.walkspeed * 1, GAMEMODE.Config.runspeed * 1) ply:SetHealth("1500") ply:SetGravity(1) return CLIENT end,
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "nullarccommander", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
 
         end,
 
@@ -3348,6 +3130,227 @@ TEAM_DROID = DarkRP.createJob("BattleDroidSniper", {
         CustomCheckFailMsg = "You don't have the required rank to complete this action!",
     })
 
+
+TEAM_Staff = DarkRP.createJob("Trial-Moderator", {
+
+    color = Color(175, 0, 0, 255),
+
+    model = "models/player/c3po.mdl",
+
+    description = [[Trial-Moderator On Duty]],
+
+    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
+
+    command = "trialmoderator",
+
+    max = 5,
+
+    salary = 0,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "Staff",
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "owner", "admin", "moderator", "tmoderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+
+    })
+
+
+TEAM_Staff = DarkRP.createJob("Moderator", {
+
+    color = Color(175, 0, 0, 255),
+
+    model = "models/player/c3po.mdl",
+
+    description = [[Moderator On Duty]],
+
+    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
+
+    command = "moderator",
+
+    max = 5,
+
+    salary = 0,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "Staff",
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "owner", "admin", "moderator", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+
+    })
+
+
+TEAM_Staff = DarkRP.createJob("Administrator", {
+
+    color = Color(175, 0, 0, 255),
+
+    model = "models/player/c3po.mdl",
+
+    description = [[Admin On Duty]],
+
+    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
+
+    command = "admin",
+
+    max = 5,
+
+    salary = 0,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "Staff",
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "owner", "admin", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+
+    })
+
+
+TEAM_Staff = DarkRP.createJob("Supervisor", {
+
+    color = Color(175, 0, 0, 255),
+
+    model = "models/player/c3po.mdl",
+
+    description = [[Supervisor On Duty]],
+
+    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
+
+    command = "supervisor",
+
+    max = 7,
+
+    salary = 0,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "Staff",
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "owner", "supervisor", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+
+    })
+
+
+TEAM_Staff = DarkRP.createJob("CO-Owner", {
+
+    color = Color(175, 0, 0, 255),
+
+    model = "models/player/c3po.mdl",
+
+    description = [[Co-Owner On Duty]],
+
+    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
+
+    command = "coowner",
+
+    max = 2,
+
+    salary = 0,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "Staff",
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "owner", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+
+    })
+
+
+TEAM_Staff = DarkRP.createJob("Founder", {
+
+    color = Color(175, 0, 0, 255),
+
+    model = "models/player/c3po.mdl",
+
+    description = [[Founder On Duty]],
+
+    weapons = {"pockets", "keys", "weapon_physgun", "gmod_tool"},
+
+    command = "founder",
+
+    max = 1,
+
+    salary = 0,
+
+    admin = 0,
+
+    vote = false,
+
+    hasLicense = false,
+
+    hasRadio = true,
+
+    category = "Staff",
+
+    customCheck = function(ply) return CLIENT or
+
+        table.HasValue({"superadmin", "owner", "senioradmin"}, ply:GetNWString("usergroup"))
+
+        end,
+
+        CustomCheckFailMsg = "You don't have the required rank to complete this action!",
+
+    })
 
 
 --[[---------------------------------------------------------------------------
